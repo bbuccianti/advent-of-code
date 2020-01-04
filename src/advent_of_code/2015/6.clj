@@ -4,26 +4,6 @@
    [clojure.java.io :as io]
    [clojure.string :refer [split-lines split blank?]]))
 
-(comment
-
-  (let [grid (into-array (for [x (range 1000)] (boolean-array 1000 true)))]
-    (criterium.core/bench (turn grid false 0 0 999 999))
-    )
-
-  (def ^:dynamic *grid* (into-array (for [x (range 100)] (boolean-array 100 true))))
-
-  (quick-bench (turn *grid* false 0 0 99 99))
-  (quick-bench (turn2 *grid* false 0 0 99 99))
-
-  (quick-bench (turn *grid* true 0 0 99 99))
-  (quick-bench (turn2 *grid* true 0 0 99 99))
-
-  (quick-bench (toggle *grid* 0 0 99 99))
-  (quick-bench (toggle2 *grid* 0 0 99 99))
-
-  (quick-bench (read-numbers "564,987"))
-)
-
 (defn toggle [^ints grid [x1 y1 x2 y2]]
   (doseq [i (range x1 (inc x2))
           k (range (+ y1 (* i 1000)) (+ y2 (* i 1000) 1))]
