@@ -1,7 +1,5 @@
 (ns advent-of-code.core
   (:gen-class))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn -main [& args]
+  (println "Advent of Code!"))
