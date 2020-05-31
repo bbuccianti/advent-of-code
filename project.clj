@@ -5,8 +5,7 @@
                  [org.clojure/core.match "0.3.0"]
                  [criterium "0.4.5"]]
   :target-path "target/%s"
-  :global-vars {*warn-on-reflection* true
-                *unchecked-math* :warn-on-boxed}
+  :global-vars {*warn-on-reflection* true}
   :profiles {:uberjar {:aot :all}
              :kaocha {:dependencies [[lambdaisland/kaocha "0.0-581"]]}}
   :aliases {"kaocha" ["with-profile" "+kaocha" "run" "-m" "kaocha.runner"]})
